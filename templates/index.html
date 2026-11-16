@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seminar Registration System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="logo">🎓</div>
+
+            <div>
+                <h1>Seminar Registration System</h1>
+
+                <p>
+                    Department of Computer Science and Engineering
+                </p>
+            </div>
+
+        </div>
+
+        <p class="hero-description">
+            Register for department seminars and workshops,
+            manage your registrations and explore learning opportunities.
+        </p>
+
+        <span class="academic-year">
+            Academic Year: 2026–27
+        </span>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <a href="#register" class="nav-link active">
+            ＋ Register
+        </a>
+
+        <a href="#registrations" class="nav-link">
+            ☷ Registrations
+        </a>
+
+        <a href="#dashboard" class="nav-link">
+            ▥ Dashboard
+        </a>
+
+    </nav>
+
+
+    <main class="container">
+
+        <!-- DASHBOARD STATISTICS -->
+        <section class="stats" id="dashboard">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">👥</div>
+
+                <div>
+                    <h3>Total Registrations</h3>
+                    <p id="totalCount">0</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🎓</div>
+
+                <div>
+                    <h3>Departments</h3>
+                    <p id="departmentCount">0</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">📅</div>
+
+                <div>
+                    <h3>Seminars / Workshops</h3>
+                    <p id="seminarCount">0</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">✔</div>
+
+                <div>
+                    <h3>Active Registrations</h3>
+                    <p id="activeCount">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN CONTENT -->
+        <section class="content-grid">
+
+
+            <!-- PARTICIPANT REGISTRATION FORM -->
+            <div class="card" id="register">
+
+                <div class="card-header">
+
+                    <h2>👤 Participant Registration</h2>
+
+                </div>
+
+
+                <form id="registrationForm">
+
+                    <div class="form-grid">
+
+
+                        <!-- STUDENT ID -->
+                        <div class="form-group">
+
+                            <label for="student_id">
+                                Student ID *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="student_id"
+                                placeholder="Enter student ID"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- FULL NAME -->
+                        <div class="form-group">
+
+                            <label for="full_name">
+                                Full Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="full_name"
+                                placeholder="Enter full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="student@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DEPARTMENT -->
+                        <div class="form-group">
+
+                            <label for="department">
+                                Department *
+                            </label>
+
+                            <select id="department" required>
+
+                                <option value="">
+                                    Select department
+                                </option>
+
+                                <option value="CSE">CSE</option>
+                                <option value="IT">IT</option>
+                                <option value="ECE">ECE</option>
+                                <option value="EEE">EEE</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- YEAR -->
+                        <div class="form-group">
+
+                            <label for="year">
+                                Year of Study *
+                            </label>
+
+                            <select id="year" required>
+
+                                <option value="">
+                                    Select year
+                                </option>
+
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SEMINAR -->
+                        <div class="form-group">
+
+                            <label for="seminar">
+                                Seminar / Workshop *
+                            </label>
+
+                            <select id="seminar" required>
+
+                                <option value="">
+                                    Select event
+                                </option>
+
+                                <option value="AI & Machine Learning">
+                                    AI & Machine Learning
+                                </option>
+
+                                <option value="Cloud Computing Workshop">
+                                    Cloud Computing Workshop
+                                </option>
+
+                                <option value="Cybersecurity Seminar">
+                                    Cybersecurity Seminar
+                                </option>
+
+                                <option value="Web Development Workshop">
+                                    Web Development Workshop
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" class="submit-btn">
+                        ＋ Register Participant
+                    </button>
+
+
+                    <!-- SUCCESS / ERROR MESSAGE -->
+                    <div id="formMessage" class="message"></div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- REGISTERED PARTICIPANTS TABLE -->
+            <div class="card" id="registrations">
+
+
+                <div class="card-header table-heading">
+
+                    <h2>☷ Registered Participants</h2>
+
+                    <span id="tableTotal">
+                        Total: 0
+                    </span>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by Student ID, Name or Email..."
+                    >
+
+                    <button
+                        id="searchBtn"
+                        type="button"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+
+
+                <!-- PARTICIPANT TABLE -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>#</th>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Year</th>
+                                <th>Seminar</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="registrationTable">
+
+                            <tr>
+                                <td colspan="8">
+                                    Loading registrations...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Department of CSE |
+            Seminar Registration System
+        </p>
+
+        <p>
+            Powered by Flask |
+            Containerized with Podman
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
